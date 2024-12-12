@@ -1,31 +1,47 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Alice','Courier New', Courier, monospace;
+  font-family: "Alice", "Courier New", Courier, monospace;
 }
 
 :root {
   --background-color: #573824;
-  --surface-color: #F0E8C2;
-  --text-color-primary: #291B1A;
-  --text-color-secondary: #573A37;
-  --text-color-on-bg: #F0E8C2;
+  --surface-color: #f0e8c2;
+  --text-color-primary: #291b1a;
+  --text-color-secondary: #573a37;
+  --text-color-on-bg: #f0e8c2;
 }
 
 body {
-  background-image: url('/assets/img/bg-image.jpg');
+  background-image: url("/assets/img/bg-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #page {
-  margin: auto;
+  margin: 24px auto;
   max-width: 800px;
   background-color: var(--surface-color);
   border-radius: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+
+section h1 {
+  font-size: 24px;
+  color: var(--text-color-primary);
+  border-bottom: 2px solid var(--text-color-secondary);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 img {
@@ -34,25 +50,53 @@ img {
 }
 
 h1 {
-  color: var(--text-color-primary)
+  color: var(--text-color-primary);
+  margin-bottom: 10px;
 }
 p {
-  color: var(--background-color);
+  color: var(--text-color-primary);
   font-size: 16px;
 }
 
+li {
+  color: var(--text-color-primary);
+}
 
+#ingredients ul {
+  padding-left: 24px;
+}
 
-#about {
-  display: flex;
-  flex-direction: column;
-  margin: 24px;
+#ingredients ul li {
+  margin-bottom: 8px;
+}
+
+footer {
+  margin: 12px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--text-color-secondary);
 }
 
 
-
-#ingredients {
-  display: flex;
-  flex-direction: column;
-  margin: 24px;
+@media (max-width: 840px) {
+  #page {
+    margin: 16px auto;
+    padding: 16px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin: 16px 0;
+  }
+  section {
+    margin: 16px;
+  }
 }
